@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Group Chat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <h1>Group Chat</h1>
+  <div class="main">
+    <div class="name">
+      <input type="text" class="user-name" id="user-name" placeholder="Enter your username">
+    </div>
+    <ul class="message-container" id="message-container">
+      <li class="message-left">
+        <p class="message">
+          Hello How are you
+          <span>bluebird 26 July 10:40
+          </span>
+        </p>
+      </li>
+
+      <li class="message-right">
+        <p class="message">
+          I am fine
+          <span>bluebird 26 July 10:40
+          </span>
+        </p>
+      </li>
+      <li class="message-feedback">
+        <p id="feedback">
+          
+        </p>
+      </li>
+    </ul>
+    <form action=""  class="form-message" id="form-message">
+      <input type="text" name="message" class="input-message" id="input-message">
+      <div class="v-divider"></div>
+      <button type="submit">
+        Submit
+      </button>
+    </form>
+    <h3 class="active-clients" id="active-clients">
+      
+    </h3>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>

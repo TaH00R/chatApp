@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #ece5dd;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.main {
+    width: 100%;
+    max-width: 900px;
+    background: #fff;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.main h1 {
+    text-align: center;
+    color: #075e54;
+    margin-bottom: 35px;
+}
+
+.input-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.create-room,
+.join-room {
+    flex: 1;
+    min-width: 300px;
+    background: #f8f8f8;
+    border-radius: 12px;
+    padding: 30px;
+    border: 1px solid #ddd;
+}
+
+.create-room h2,
+.join-room h2 {
+    text-align: center;
+    color: #128c7e;
+    margin-bottom: 25px;
+}
+
+.create-room h3,
+.join-room h3 {
+    margin: 15px 0 8px;
+    font-size: 15px;
+    color: #444;
+    font-weight: 600;
+}
+
+.create-room input,
+.join-room input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.create-room input:focus,
+.join-room input:focus {
+    border-color: #128c7e;
+    box-shadow: 0 0 5px rgba(18, 140, 126, 0.3);
+}
+
+.createRoom,
+.joinRoom {
+    width: 100%;
+    margin-top: 25px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #128c7e;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.createRoom:hover,
+.joinRoom:hover {
+    background: #0f766a;
+    transform: translateY(-2px);
+}
+
+.createRoom:active,
+.joinRoom:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .main {
+        padding: 25px;
+    }
+
+    .input-content {
+        flex-direction: column;
+    }
+
+    .create-room,
+    .join-room {
+        width: 100%;
+    }
+}
