@@ -8,7 +8,7 @@ const messageInput = document.getElementById('input-message')
 const params = new URLSearchParams(window.location.search)
 const room = params.get("room")
 const name = params.get("name")
-
+document.getElementById('myRoom').innerText = room;
 socket.emit('enter-room' , {
   room,
   name
@@ -17,6 +17,18 @@ userName.value = name
 messageForm.addEventListener('submit' , (e)=>{
    e.preventDefault()
    sendMessage();
+})
+socket.on("room-users" , (users)=>{
+  const list = document.getElementById('user-list')
+  list.innerHTML="";
+  users.forEach((user) => {
+    list.innerHTML+= `
+   <li>
+              <p>${user.name}</p>
+            </li>
+  `
+  });
+  
 })
 
 
