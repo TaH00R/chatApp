@@ -58,6 +58,24 @@ socket.on('chat-message' , (data)=>{
   addMessage(false , data);
 
 })
+socket.on('previous-messages' , (messages)=>{
+  messages.forEach((message)=>{
+    if(message.sender === name) {
+
+      addMessage(true , {
+        name:message.sender,
+        message:message.message,
+        dateTime:message.createdAt
+      })
+    } else {
+    addMessage(false , {
+      name:message.sender,
+      message:message.message,
+      dateTime:message.createdAt
+    })
+  }
+  })
+})
 function addMessage(isOwnMessage , data) {
   const element = `
     <li class="${isOwnMessage ? "message-right" : "message-left"}">
@@ -97,6 +115,7 @@ socket.on("feedback" , (data)=>{
   typingUsers.add(data.name)
   updateFeedback();
 })
+
 function updateFeedback() {
   const feedbackDisplay = document.getElementById('feedback')
   if(typingUsers.size===0) {
@@ -106,3 +125,11 @@ function updateFeedback() {
   feedbackDisplay.textContent = [...typingUsers].join(',')+' is typing...'
   }
 }
+const copyBtn = document.getElementById('copy-btn')
+copyBtn.addEventListener('click' , ()=>{
+  navigator.clipboard.writeText(room)
+  copyBtn.innerText = "Copied"
+  setTimeout(()=>{
+    copyBtn.innerText='Copy'
+  },3000)
+})

@@ -14,6 +14,9 @@ socket.on('room-joined', (data)=>{
 
   window.location.href=`index.html?room=${data.room}&name=${data.name}`
 })
+socket.on("dublicateName" , (data)=>{
+  alert("username already exist in room")
+})
   socket.on('no-room' , (data)=>{
     alert("No room found")
   })
