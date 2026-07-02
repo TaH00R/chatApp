@@ -6,17 +6,34 @@ function genereateID() {
   .substring(2,8)
   .toUpperCase()
 }  
+socket.on('room-created' , (data)=>{
+  window.location.href = `index.html?room=${data.room}&name=${data.name}`
+
+})
+socket.on('room-joined', (data)=>{
+
+  window.location.href=`index.html?room=${data.room}&name=${data.name}`
+})
+  socket.on('no-room' , (data)=>{
+    alert("No room found")
+  })
 createRoomBtn.addEventListener('click' ,()=> {
+  const Cusername = document.getElementById('create-username').value
   console.log("Button Clicked")
   const roomID = genereateID()
-  
-  const username = document.getElementById('create-username').value
-  window.location.href = `index.html?room=${roomID}&name=${username}`
+  socket.emit("create-room" ,{
+    room:roomID,
+    name:Cusername
+})
+
 })
 joinRoomBtn.addEventListener('click' , ()=>{
+  const Jusername = document.getElementById('join-username').value
   const roomId = document.getElementById('room-ID').value
- 
-      const username = document.getElementById('join-username').value
-      window.location.href=`index.html?room=${roomId}&name=${username}`
-  
+ socket.emit("join-room" ,{
+ room:roomId,
+ name:Jusername
+})
+
+
   })

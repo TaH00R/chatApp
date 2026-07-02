@@ -9,13 +9,9 @@ const params = new URLSearchParams(window.location.search)
 const room = params.get("room")
 const name = params.get("name")
 
-socket.emit("join-room" ,{
- room,
- name
-})
-socket.emit("create-room" ,{
- room,
- name
+socket.emit('enter-room' , {
+  room,
+  name
 })
 userName.value = name
 messageForm.addEventListener('submit' , (e)=>{
