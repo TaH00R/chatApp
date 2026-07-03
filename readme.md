@@ -51,10 +51,12 @@ A real-time group chat application built with **Node.js**, **Express.js**, **Soc
 
 ## 📷 Screenshots
 
-> Add screenshots of:
->
+> screenshots 
 > * Home Page
+><img width="933" height="922" alt="Screenshot 2026-07-03 205523" src="https://github.com/user-attachments/assets/3f7f3534-6399-49b8-9238-9cd48a2e7e56" />
 > * Chat Room
+<img width="1540" height="862" alt="Screenshot 2026-07-03 204959" src="https://github.com/user-attachments/assets/a9b020d6-1652-4e7d-9d3a-59b81b1785b5" />
+
 > * Room Members Sidebar
 > * Previous Messages
 > * Typing Indicator
