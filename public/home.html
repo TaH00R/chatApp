@@ -1,32 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="./home.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Retro Autumn Chat</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./home.css">
 </head>
+
 <body>
-  <div class="main">
-    <h1>Join or create a room</h1>
-    <div class="input-content">
-      <div class="create-room">
-        <h2>Create Room</h2>
-        <h3>Enter Username</h3>
-        <input type="text" id="create-username">
-        <button id="createRoom" class="createRoom">Create Room</button>
-      </div>
-      <div class="join-room">
-        <h2>Join Room</h2>
-        <h3>Enter Username</h3>
-        <input type="text" id="join-username" class="join-username">
-        <h3>Enter Roon ID</h3>
-        <input type="text" class="room-ID" id="room-ID">
-        <button id="joinRoom" class="joinRoom">Join Room</button>
-      </div>
+
+    <div class="background">
+
+        <img src="./assets/maple.svg" class="leaf leaf1" alt="">
+        <img src="./assets/leaf.svg" class="leaf leaf2" alt="">
+        <img src="./assets/maple.svg" class="leaf leaf3" alt="">
+        <img src="./assets/leaf.svg" class="leaf leaf4" alt="">
+        <img src="./assets/maple.svg" class="leaf leaf5" alt="">
+        <img src="./assets/leaf.svg" class="leaf leaf6" alt="">
+        <img src="./assets/maple.svg" class="leaf leaf7" alt="">
+        <img src="./assets/leaf.svg" class="leaf leaf8" alt="">
+        <img src="./assets/maple.svg" class="leaf leaf9" alt="">
+        <img src="./assets/leaf.svg" class="leaf leaf10" alt="">
+        <img src="./assets/maple.svg" class="leaf leaf11" alt="">
+        <img src="./assets/leaf.svg" class="leaf leaf12" alt="">
+
+        <div class="branch"></div>
+
+        <div class="coffee"></div>
+
+        <div class="fox"></div>
+
+        <div class="mushroom"></div>
+
     </div>
-  </div>
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="./home.js"> </script>
+
+    <main class="container">
+
+        <header class="hero">
+
+            <h1>
+                CampFire
+            </h1>
+
+            <p>
+                Find your cozy corner, create a room, and chat with friends.
+            </p>
+
+        </header>
+
+        <section class="cards">
+
+            <article class="card create-card">
+
+                <div class="tape tape-left"></div>
+                <div class="tape tape-right"></div>
+
+                <div class="card-icon">
+                    🍁
+                </div>
+
+                <h2>Create Room</h2>
+
+                <div class="form-group">
+
+                    <label for="create-username">
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="create-username"
+                        placeholder="Enter your nickname..."
+                    >
+
+                </div>
+
+                <button
+                    id="createRoom"
+                    class="primary-btn">
+
+                    Create Room
+
+                </button>
+
+            </article>
+
+            <div class="divider">
+
+                <span>☙ OR ❧</span>
+
+            </div>
+
+            <article class="card join-card">
+
+                <div class="tape tape-left"></div>
+                <div class="tape tape-right"></div>
+
+                <div class="card-icon">
+                    🍂
+                </div>
+
+                <h2>Join Room</h2>
+
+                <div class="form-group">
+
+                    <label for="join-username">
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="join-username"
+                        placeholder="Enter your nickname..."
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="room-ID">
+                        Room ID
+                    </label>
+
+                    <input
+                        type="text"
+                        id="room-ID"
+                        placeholder="ABC123..."
+                    >
+
+                </div>
+
+                <button
+                    id="joinRoom"
+                    class="primary-btn">
+
+                    Join Room
+
+                </button>
+
+            </article>
+
+        </section>
+
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./home.js"></script>
+
 </body>
 </html>
