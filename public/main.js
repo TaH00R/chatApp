@@ -24,7 +24,7 @@ socket.on("room-users" , (users)=>{
   users.forEach((user) => {
     list.innerHTML+= `
    <li>
-              <p>${user.name}</p>
+              <p>🟢${user.name}</p>
             </li>
   `
   });
@@ -39,7 +39,7 @@ socket.on('total-clients' , (data)=>{
 function sendMessage() {
   if(messageInput.value === '') return
   if(userName.value ==='') {
-    alert("enter your name")
+    alert("Enter your name")
     return
   }
   console.log(messageInput)
@@ -76,12 +76,14 @@ socket.on('previous-messages' , (messages)=>{
   }
   })
 })
+
+
 function addMessage(isOwnMessage , data) {
   const element = `
     <li class="${isOwnMessage ? "message-right" : "message-left"}">
         <p class="message">
           ${data.message}
-          <span>${data.name} * ${moment(data.dateTime).fromNow()} 
+          <span>${data.name} 🍂 ${moment(data.dateTime).fromNow()} 
           </span>
         </p>
       </li>
@@ -128,8 +130,8 @@ function updateFeedback() {
 const copyBtn = document.getElementById('copy-btn')
 copyBtn.addEventListener('click' , ()=>{
   navigator.clipboard.writeText(room)
-  copyBtn.innerText = "Copied"
+  copyBtn.innerText = "Copied!"
   setTimeout(()=>{
-    copyBtn.innerText='Copy'
+    copyBtn.innerText='📋 Copy'
   },3000)
 })

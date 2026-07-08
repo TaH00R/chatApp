@@ -1,72 +1,114 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Group Chat</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- <link rel="stylesheet" href="style.css"> -->
-    <h1>Group Chat</h1>
-    <div class="main">
-      <div class="room-info" id="room-info">
-        <h3>💬 Chat Room</h3>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampFire</title>
 
-<div id="room-id">
-    <small>Room ID</small>
-    <p id="myRoom"></p>
-    <br>
-    <button id="copy-btn">COPY</button>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Special+Elite&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="background-overlay"></div>
+
+<div class="app">
+    <aside class="sidebar">
+
+        <div class="sidebar-title">
+            🔥 CampFire
+        </div>
+
+        <div class="room-card">
+
+            <span class="label">
+                Room ID
+            </span>
+
+            <h2 id="myRoom"></h2>
+
+            <button id="copy-btn">
+                📋 Copy
+            </button>
+
+        </div>
+
+        <div class="members-card">
+
+            <h3>
+                👥 Campers
+            </h3>
+
+            <ul id="user-list"></ul>
+
+        </div>
+
+        <div class="online-card">
+            <span id="active-clients"></span>
+        </div>
+
+    </aside>
+
+    <section class="chat">
+
+        <header class="chat-header">
+
+            <div>
+
+                <h1>💬 ChatBox</h1>
+
+                <p>Gather around the fire and chat.</p>
+
+            </div>
+
+            <input
+                type="text"
+                class="user-name"
+                id="user-name"
+                placeholder="Enter your nickname..."
+            >
+
+        </header>
+
+        <ul
+            class="message-container"
+            id="message-container"
+        >
+
+            <li class="message-feedback">
+                <p id="feedback"></p>
+            </li>
+
+        </ul>
+
+        <form
+            class="form-message"
+            id="form-message"
+        >
+
+            <input
+                type="text"
+                id="input-message"
+                class="input-message"
+                autocomplete="off"
+                placeholder="Share your thoughts..."
+            >
+
+            <button type="submit" class = "send-btn">
+                🍂 Send
+            </button>
+
+        </form>
+
+    </section>
+
 </div>
 
-<div class="users">
-    <ul id="user-list"></ul>
-</div>
-      </div>
-      <div class="chat-section">
-      <div class="name">
-        <input
-          type="text"
-          class="user-name"
-          id="user-name"
-          placeholder="Enter your username"
-        />
-      </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="./main.js"></script>
 
-      <ul class="message-container" id="message-container">
-        <!-- <li class="message-left">
-          <p class="message">
-            Hello How are you
-            <span>bluebird 26 July 10:40 </span>
-          </p>
-        </li>
-
-        <li class="message-right">
-          <p class="message">
-            I am fine
-            <span>bluebird 26 July 10:40 </span>
-          </p>
-        </li> -->
-        <li class="message-feedback">
-          <p id="feedback"></p>
-        </li>
-      </ul>
-      <form action="" class="form-message" id="form-message">
-        <input
-          type="text"
-          name="message"
-          class="input-message"
-          id="input-message"
-        />
-        <div class="v-divider"></div>
-        <button type="submit">Submit</button>
-      </form>
-      <h3 class="active-clients" id="active-clients"></h3>
-      </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="./main.js"></script>
-  </body>
+</body>
 </html>
